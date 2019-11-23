@@ -1,0 +1,16 @@
+<h1>List of Recipes</h1>
+<ul>
+  <% Recipe.all.each do |recipe| %>
+  <p>
+    <h3><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></h3>
+    <li><strong>Recipe Ingredients</strong>: <%= recipe.ingredients %></li>
+    <li><strong>Recipe Cook Time</strong>: <%= recipe.cook_time %></li>
+    <p>
+      <% end %>
+</ul>
+
+<form method="get" action="../recipes/new">
+  <input type="submit" value="Create a New Recipe">
+</form>
+
+<%# <a href="/new" class="btn">User Profile</a> %>
