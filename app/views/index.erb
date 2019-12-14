@@ -1,0 +1,13 @@
+<h1>FlatRecipe Keeper</h1>
+<p></p>
+<h2>ALL Recipes</h2>
+
+<% if @recipes.empty? %>
+    <p>Add a <a href="/recipes/new">new</a> recipe!</p>
+<% else %>
+    <% @recipes.each do |recipe|%>
+    <ol>
+        <li><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></li>
+    </ol>
+    <% end %>
+<% end %>
